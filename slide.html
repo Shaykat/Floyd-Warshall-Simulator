@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slide show</title>
+
+	<script type="text/javascript">
+		var y = 1;
+		function imgshow(x){
+			alert(x);
+			if(x == 1)	{ document.getElementById("1").src = "ad1.jpg"; }
+			if(x == 2)	{ document.getElementById("1").src = "ad2.jpg"; }
+			if(x == 3)	{ document.getElementById("1").src = "ad3.jpg"; }
+			if(x == 4)	{ document.getElementById("1").src = "ad4.jpg"; }
+		}
+
+		function nxt(){
+			if(y == 4) y = 1;
+			imgshow(y++);
+		}
+		function prev(){
+			if(y == 1) y = 4;
+			imgshow(y--);
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<table border =  '1'>
+			<tr>
+				<td > <img src="ad1.jpg" width="50" height="50" onclick="imgshow('1')"> </td>
+				<td > <img src="ad2.jpg" width="50" height="50" onclick="imgshow(2)"> </td>
+				<td > <img src="ad3.jpg" width="50" height="50" onclick="imgshow('3')"> </td>
+				<td > <img src="ad4.jpg" width="50" height="50" onclick="imgshow('4')"> </td>
+				
+			</tr>
+			<tr>
+				<td colspan="4"> <img id = "1" src="ad1.jpg" width="400" height="400"> </td>
+			</tr>
+			<tr>
+				<td colspan = "2" align = "left"> <input type = "button" onclick = "prev()" value = "Previous"> </td>
+				<td colspan = "2" align = "right"> <input type = "button" onclick = "nxt()" value = "Next"> </td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>
